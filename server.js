@@ -9,7 +9,11 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-app.use(cors()); // Allow requests from any domain or localhost
+app.use(cors({
+    origin: 'https://share-thoughts-backend-1.onrender.com',
+  credentials: true // if using cookies or auth headers
+
+            )); // Allow requests from any domain or localhost
 
 app.use(bodyParser.json());
 
